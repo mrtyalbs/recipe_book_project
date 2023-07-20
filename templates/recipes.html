@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+{% include 'header.html' %}
+<section class="section-meals">
+    <div class="container- center-text">
+        <span class="subheading">Recipes</span>
+    </div>
+
+
+    <div class="container- grid grid--3-cols margin-bottom-md">
+        {% for recipe in recipes %}
+        <a href="{{ url_for('recipe', recipe_id=recipe.id) }}" style="text-decoration: none; color: #212529;">
+            <div class="meal">
+                <img src="{{ recipe.img }}" class="meal-img" alt="{{ recipe.name }} image" />
+                <div class="meal-content">
+                    <p class="meal-title center-text">{{ recipe.name }}</p>
+                    <ul class="meal-attributes">
+                        <li class="meal-attribute">
+                            <ion-icon class="meal-icon" name="restaurant-outline"></ion-icon>
+                            <span>{{ recipe.category }}</span>
+                        </li>
+                        <li class="meal-attribute center-text">
+                            <ion-icon class="meal-icon" name="hourglass-outline"></ion-icon>
+                            <span><strong>{{ recipe.prep_time }}</strong> minute </span>
+                        </li>
+                        <li class="meal-attribute">
+                            <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
+                            <span><strong>{{ recipe.cook_time }}</strong> minute</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+
+
+</section>
+{% include 'footer.html' %}
+<script>
+    var mealCards = document.querySelectorAll('.meal');
+
+    // Kartlardaki en büyük yüksekliği bulun
+    var maxHeight = 0;
+    for (var i = 0; i < mealCards.length; i++) {
+        var cardHeight = mealCards[i].offsetHeight;
+        if (cardHeight > maxHeight) {
+            maxHeight = cardHeight;
+        }
+    }
+
+
+    for (var i = 0; i < mealCards.length; i++) {
+        mealCards[i].style.height = maxHeight + 'px';
+    }
+</script>
+{% endblock %}
+

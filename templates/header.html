@@ -1,0 +1,19 @@
+<header class="header">
+    <div></div>
+    <nav class="main-nav">
+      <ul class="main-nav-list">
+        <li><a class="main-nav-link" href="{{ url_for('home') }}">Home</a></li>
+        <li><a class="main-nav-link" href="{{ url_for('recipes') }}">Recipes</a></li>
+        <li><a class="main-nav-link" href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+        <li><a class="main-nav-link" href="{{ url_for('comment') }}">Comment Us</a></li>
+        <div class="main-nav-list-2">
+          {% if not current_user.is_authenticated: %}
+          <li><a class="main-nav-link nav-cta" href="{{ url_for('register') }}">Sign Up</a></li>
+          <li><a class="main-nav-link nav-cta" href="{{ url_for('login') }}">Log In</a></li>
+          {% else: %}
+          <li><a class="main-nav-link nav-cta" href="{{ url_for('logout') }}">Log Out</a></li>
+          {% endif %}
+        </div>
+      </ul>
+    </nav>
+  </header>

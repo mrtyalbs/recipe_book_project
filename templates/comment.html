@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'header.html' %}
+<section class="section-cta-">
+    <div class="container-">
+        <div class="cta">
+            <div class="cta-text-box">
+                <h2 class="heading-secondary-">Comment Us</h2>
+
+                <form class="cta-form-2" action="{{ url_for('comment') }}" method="post">
+                    <div class="cta-form-comment">
+                        <div>
+                            <textarea name="comment" id="comment" placeholder="Please comment us."
+                                required></textarea>
+                        </div>
+                    </div>
+                    <button class="btn- btn--form" >Send Comment</button>
+                </form>
+            </div>
+
+</section>
+{% include 'footer.html' %}
+{% endblock %}

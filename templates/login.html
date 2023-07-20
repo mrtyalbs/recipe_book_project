@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %} Log In {% endblock %}
+
+{% block content %}
+{% include 'header.html' %}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+    <div class="container- text-center fs-2 mt-5 mb-0">
+      <div class="alert alert-danger" role="alert">
+        {{ message }}
+      </div>
+    </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<section class="section-cta-" style="padding: 8.5rem 0 9.6rem 0;">
+  <div class="container--">
+    <div class="cta">
+      <div class="cta-text-box" style="padding:4.8rem 4.8rem 0 4.8rem;">
+
+        <form class="cta-form-" action="{{ url_for('login') }}" method="post" style="padding: 0;">
+
+          <div>
+            <label for="email">Email address</label>
+            <input name="email" id="email" type="email" placeholder="me@example.com" required />
+          </div>
+
+          <div>
+            <label for="password">Password</label>
+            <input name="password" id="password" type="password" placeholder="Password" required />
+          </div>
+          <button class="btn- btn--form">Log in</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% include 'footer.html' %}
+{% endblock %}

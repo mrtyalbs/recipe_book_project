@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'header.html' %}
+<section class="section-cta-">
+    <div class="container-">
+        <div class="cta--">
+            <div class="cta-text-box">
+                <!-- <h2 class="heading-secondary-">Yummy!!!</h2> -->
+
+                <form class="cta-form" action="{{ url_for('add_recipe') }}" method="post">
+                    <div style="grid-column: 1 / span 2;">
+                        <label for="name">Recipe Name</label>
+                        <input name="name" id="name" type="text" placeholder="Recipe Name" required />
+                    </div>
+
+                    <div>
+                        <label for="prep_time">Preparation Time</label>
+                        <input type="number" name="prep_time" id="prep_time" placeholder="Minute" required>
+                    </div>
+
+                    <div>
+                        <label for="cook_time">Cooking Time</label>
+                        <input type="number" name="cook_time" id="cook_time" placeholder="Minute" required>
+                    </div>
+                    <div style="grid-column: 1 / span 2;">
+                        <label for="img">Recipe Image</label>
+                        <input name="img" id="img" type="text" placeholder="Recipe Image Link" required />
+                    </div>
+                    <div style="grid-column: 1 / span 2;">
+                        <label for="category">Meal Type:</label>
+                        <select id="category" name="category">
+                            <option value="breakfast">Breakfast</option>
+                            <option value="lunch">Lunch</option>
+                            <option value="dinner">Dinner</option>
+                            <option value="snack">Snack</option>
+                            <option value="dessert">Dessert</option>
+                            <option value="brunch">Brunch</option>
+                            <option value="pastry">Pastry (Sweet)</option>
+                        </select>
+                    </div>
+
+                    <button class="btn- btn--form">Add</button>
+            </div>
+            <div class="cta-form" style="padding: 3.2rem 6.4rem 6.4rem 6.4rem;">
+                <div style="grid-column: 1 / span 2;">
+                    <label for="instructions">Instructions</label>
+                    <textarea name="instructions" id="instructions" required
+                        placeholder="Please write the recipe and instructions for how to prepare the dish."></textarea>
+
+
+                    <label for="ingredients">Ingredients</label>
+                    <textarea name="ingredients" id="ingredients" required
+                        placeholder="Please add a comma between each ingredient you listed."></textarea>
+                </div>
+            </div>
+
+
+            </form>
+
+</section>
+{% include 'footer.html' %}
+{% endblock %}

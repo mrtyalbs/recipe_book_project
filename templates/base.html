@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    {% block styles %}
+    {% endblock %}
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/general.css">
+    <!-- Bootstrap CSS -->
+    {{ bootstrap.load_css() }}
+
+    <title>{% block title %} {% endblock %}</title>
+    {% endblock %}
+</head>
+
+<body>
+    <!-- Page content -->
+    {% block content %} {% endblock %}
+
+    {% block scripts %}
+    <!-- Javascript -->
+    {{ bootstrap.load_js() }}
+    {% endblock %}
+</body>
+
+</html>

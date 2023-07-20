@@ -1,0 +1,19 @@
+<section class="section-hero">
+    <div class="hero">
+      <div class="hero-text-box">
+        <h1 class="heading-primary">
+          A healty meal recepies.
+        </h1>
+        <p class="hero-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, hic.
+        </p>
+        {% if not current_user.is_authenticated: %}
+        <a class="btn- btn--full margin-right-sm" href="#">Sign Up</a>
+        <a class="btn- btn--full margin-right-sm" href="#">Log In</a>
+        {% endif %}
+      </div>
+      <div class="hero-img-box">
+        <img class="hero-img" src="./static/img/hero.png" alt="">
+      </div>
+    </div>
+  </section>

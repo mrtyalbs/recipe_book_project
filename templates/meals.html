@@ -1,0 +1,180 @@
+{%include 'base.html' %}
+
+<section class="section-meals">
+    <div class="container- center-text">
+        <span class="subheading">Meals</span>
+        <h2 class="heading-secondary">
+            AI chooses from 5,000+ recipes
+        </h2>
+    </div>
+
+    <div class="container- grid grid--3-cols margin-bottom-md">
+        <div class="meal">
+            <a href="{{ url_for('recipe', recipe_id=recipe.id) }}" style="text-decoration: none; color: #212529;">
+                <div class="meal">
+                    <img src="{{ recipe.img }}" class="meal-img" alt="{{ recipe.name }} image" />
+                    <div class="meal-content">
+                        <p class="meal-title center-text">{{ recipe.name }}</p>
+                        <ul class="meal-attributes">
+                            <li class="meal-attribute">
+                                <ion-icon class="meal-icon" name="restaurant-outline"></ion-icon>
+                                <span>{{ recipe.category }}</span>
+                            </li>
+                            <li class="meal-attribute center-text">
+                                <ion-icon class="meal-icon" name="hourglass-outline"></ion-icon>
+                                <span><strong>{{ recipe.prep_time }}</strong> minute </span>
+                            </li>
+                            <li class="meal-attribute">
+                                <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
+                                <span><strong>{{ recipe.cook_time }}</strong> minute</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="meal">
+            <a href="{{ url_for('recipe', recipe_id=recipe.id) }}" style="text-decoration: none; color: #212529;">
+                <div class="meal">
+                    <img src="{{ recipe.img }}" class="meal-img" alt="{{ recipe.name }} image" />
+                    <div class="meal-content">
+                        <p class="meal-title center-text">{{ recipe.name }}</p>
+                        <ul class="meal-attributes">
+                            <li class="meal-attribute">
+                                <ion-icon class="meal-icon" name="restaurant-outline"></ion-icon>
+                                <span>{{ recipe.category }}</span>
+                            </li>
+                            <li class="meal-attribute center-text">
+                                <ion-icon class="meal-icon" name="hourglass-outline"></ion-icon>
+                                <span><strong>{{ recipe.prep_time }}</strong> minute </span>
+                            </li>
+                            <li class="meal-attribute">
+                                <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
+                                <span><strong>{{ recipe.cook_time }}</strong> minute</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="meal">
+            <a href="{{ url_for('recipe', recipe_id=recipe.id) }}" style="text-decoration: none; color: #212529;">
+                <div class="meal">
+                    <img src="{{ recipe.img }}" class="meal-img" alt="{{ recipe.name }} image" />
+                    <div class="meal-content">
+                        <p class="meal-title center-text">{{ recipe.name }}</p>
+                        <ul class="meal-attributes">
+                            <li class="meal-attribute">
+                                <ion-icon class="meal-icon" name="restaurant-outline"></ion-icon>
+                                <span>{{ recipe.category }}</span>
+                            </li>
+                            <li class="meal-attribute center-text">
+                                <ion-icon class="meal-icon" name="hourglass-outline"></ion-icon>
+                                <span><strong>{{ recipe.prep_time }}</strong> minute </span>
+                            </li>
+                            <li class="meal-attribute">
+                                <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
+                                <span><strong>{{ recipe.cook_time }}</strong> minute</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="container- all-recipes">
+            <a href="{{ url_for('recipes') }}" class="link">See all recipes &rarr;</a>
+        </div>
+</section>
+
+
+<section class="section-testimonials">
+    <div class="testimonials-container">
+        <span class="subheading">Testimonials</span>
+        <h2 class="heading-secondary">Once you try it, you can't go back</h2>
+
+        <div class="testimonials">
+            <figure class="testimonial">
+                <ion-icon class="list-icon" name="checkmark-outline" id="random-comment"></ion-icon>
+                <blockquote class="testimonial-text">
+
+                    {{ comments[-1].comment }}
+
+                </blockquote>
+            </figure>
+            <figure class="testimonial">
+                <ion-icon class="list-icon" name="checkmark-outline" id="random-comment"></ion-icon>
+                <blockquote class="testimonial-text">
+                    {{ comments[-2].comment }}
+                </blockquote>
+            </figure>
+            <figure class="testimonial">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <blockquote class="testimonial-text" id="random-comment">
+                    {{ comments[-3].comment }}
+                </blockquote>
+            </figure>
+            <figure class="testimonial">
+                <ion-icon class="list-icon" name="checkmark-outline" id="random-comment"></ion-icon>
+                <blockquote class="testimonial-text">
+                    {{ comments[-4].comment }}
+                </blockquote>
+            </figure>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <figure class="gallery-item">
+            <img src="./static/img/gallery-1.jpg" alt="Photo of beautifully
+              arranged food" />
+            <!-- <figcaption>Caption</figcaption> -->
+        </figure>
+        <figure class="gallery-item">
+            <img src="./static/img/gallery-2.jpg" alt="Photo of beautifully
+              arranged food" />
+        </figure>
+        <figure class="gallery-item">
+            <img src="./static/img/gallery-3.jpg" alt="Photo of beautifully
+              arranged food" />
+        </figure>
+        <figure class="gallery-item">
+            <img src="./static/img/gallery-4.jpg" alt="Photo of beautifully
+              arranged food" />
+        </figure>
+        <figure class="gallery-item">
+            <img src="./static/img/gallery-5.jpg" alt="Photo of beautifully
+              arranged food" />
+        </figure>
+        <figure class="gallery-item">
+            <img src="./static/img/gallery-6.jpg" alt="Photo of beautifully
+              arranged food" />
+        </figure>
+        <figure class="gallery-item">
+            <img src="./static/img/gallery-7.jpg" alt="Photo of beautifully
+              arranged food" />
+        </figure>
+        <figure class="gallery-item">
+            <img src="./static/img/gallery-8.jpg" alt="Photo of beautifully
+              arranged food" />
+        </figure>
+        <figure class="gallery-item">
+            <img src="./static/img/gallery-9.jpg" alt="Photo of beautifully
+              arranged food" />
+        </figure>
+        <figure class="gallery-item">
+            <img src="./static/img/gallery-10.jpg" alt="Photo of beautifully
+              arranged food" />
+        </figure>
+        <figure class="gallery-item">
+            <img src="./static/img/gallery-11.jpg" alt="Photo of beautifully
+              arranged food" />
+        </figure>
+        <figure class="gallery-item">
+            <img src="./static/img/gallery-12.jpg" alt="Photo of beautifully
+              arranged food" />
+        </figure>
+    </div>
+</section>
+
