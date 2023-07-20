@@ -1,5 +1,4 @@
 # RecipeBook Web Application
-#### Video Demo:  <https://youtu.be/KcxElRqxeHM>
 #### Description:
 This repository contains the source code for a web application that allows users to explore various recipes, add their own, and create an account to personalize their experience. It is built using HTML, CSS, JS, and Python.
 
